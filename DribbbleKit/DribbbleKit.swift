@@ -10,74 +10,93 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-enum Scope {
-    case Public
-    case Write
-    case Comment
-    case Upload
+public enum Scope: String {
+    case Public = "public"
+    case Write = "write"
+    case Comment = "comment"
+    case Upload = "upload"
 }
 
 
 public class DribbbleKit {
-    class func register() {
-        
+    
+    let serverRootUrl = "https://dribbble.com"
+    
+    private var clientId = ""
+    private var redirectUri = ""
+    private var scope = Scope.Public
+    private let state = UIDevice.currentDevice().identifierForVendor?.UUIDString
+    
+    static private let instance = DribbbleKit()
+    
+    public class func register(clientId: String, redirectUri: String, scope: Scope) {
+        self.instance.clientId = clientId
+        self.instance.redirectUri = redirectUri
+        self.instance.scope = scope
     }
+    
+    public class func authorizationUrl() -> NSURL {
+        return NSURL(string: self.instance.serverRootUrl + "/oauth/authorize?client_id=\(self.instance.clientId)&redirect_uri=\(self.instance.redirectUri)&scope=\(self.instance.scope.rawValue)&state=captainteemo")!
+    }
+    
 }
 
 
 // keys
 
-let kId = "id"
-let kName = "name"
-let kUsername = "username"
-let kHtmlUrl = "html_url"
-let kAvatarUrl = "avatar_url"
-let kBio = "bio"
-let kLocation = "location"
-let kLinks = "links"
-let kWeb = "web"
-let kTwitter = "twitter"
-let kBucketsCount = "buckets_count"
-let kCommentsReceivedCount = "comments_received_count"
-let kFollowersCount = "followers_count"
-let kFollowingsCount = "followings_count"
-let kLikesCount = "likes_count"
-let kLikesReceivedCount = "likes_received_count"
-let kProjectsCount = "projects_count"
-let kReboundsReceivedCount = "rebounds_received_count"
-let kReboundsCount = "rebounds_count"
-let kShotsCount = "shots_count"
-let kTeamsCount = "teams_count"
-let kCanUploadShot = "can_upload_shot"
-let kType = "type"
-let kPro = "pro"
-let kBucketsUrl = "buckets_url"
-let kFollowersUrl = "followers_url"
-let kFollowingUrl = "following_url"
-let kLikesUrl = "likes_url"
-let kShotsUrl = "shots_url"
-let kTeamsUrl = "teams_url"
-let kCreateDate = "created_at"
-let kUpdateDate = "updated_at"
-let kTitle = "title"
-let kDescription = "description"
-let kWidth = "width"
-let kHeight = "height"
-let kImages = "images"
-let kHidpi = "hidpi"
-let kNormal = "normal"
-let kTeaser = "teaser"
-let kViewsCount = "views_count"
-let kCommentsCount = "comments_count"
-let kAttachmentsCount = "attachments_count"
-let kCommentsUrl = "comments_url"
-let kProjectsUrl = "projects_url"
-let kReboundsUrl = "rebounds_url"
-let kAttachmentsUrl = "attachments_url"
-let kAnimated = "animated"
-let kTags = "tags"
-let kUser = "user"
-let kTeam = "team"
+private let kId = "id"
+private let kName = "name"
+private let kUsername = "username"
+private let kHtmlUrl = "html_url"
+private let kAvatarUrl = "avatar_url"
+private let kBio = "bio"
+private let kLocation = "location"
+private let kLinks = "links"
+private let kWeb = "web"
+private let kTwitter = "twitter"
+private let kBucketsCount = "buckets_count"
+private let kCommentsReceivedCount = "comments_received_count"
+private let kFollowersCount = "followers_count"
+private let kFollowingsCount = "followings_count"
+private let kLikesCount = "likes_count"
+private let kLikesReceivedCount = "likes_received_count"
+private let kProjectsCount = "projects_count"
+private let kReboundsReceivedCount = "rebounds_received_count"
+private let kReboundsCount = "rebounds_count"
+private let kShotsCount = "shots_count"
+private let kTeamsCount = "teams_count"
+private let kCanUploadShot = "can_upload_shot"
+private let kType = "type"
+private let kPro = "pro"
+private let kBucketsUrl = "buckets_url"
+private let kFollowersUrl = "followers_url"
+private let kFollowingUrl = "following_url"
+private let kLikesUrl = "likes_url"
+private let kShotsUrl = "shots_url"
+private let kTeamsUrl = "teams_url"
+private let kCreateDate = "created_at"
+private let kUpdateDate = "updated_at"
+private let kTitle = "title"
+private let kDescription = "description"
+private let kWidth = "width"
+private let kHeight = "height"
+private let kImages = "images"
+private let kHidpi = "hidpi"
+private let kNormal = "normal"
+private let kTeaser = "teaser"
+private let kViewsCount = "views_count"
+private let kCommentsCount = "comments_count"
+private let kAttachmentsCount = "attachments_count"
+private let kCommentsUrl = "comments_url"
+private let kProjectsUrl = "projects_url"
+private let kReboundsUrl = "rebounds_url"
+private let kAttachmentsUrl = "attachments_url"
+private let kAnimated = "animated"
+private let kTags = "tags"
+private let kUser = "user"
+private let kTeam = "team"
+
+// models
 
 public class Model {
     public var id: String
