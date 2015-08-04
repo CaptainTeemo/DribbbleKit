@@ -10,7 +10,19 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+enum Scope {
+    case Public
+    case Write
+    case Comment
+    case Upload
+}
 
+
+public class DribbbleKit {
+    class func register() {
+        
+    }
+}
 
 
 // keys
