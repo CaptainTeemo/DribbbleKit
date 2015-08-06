@@ -12,7 +12,6 @@
 		653F24581B72FDE200AB3A44 /* DribbbleKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F24571B72FDE200AB3A44 /* DribbbleKitTests.swift */; };
 		653F24651B72FE1A00AB3A44 /* AuthWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F24611B72FE1A00AB3A44 /* AuthWebViewController.swift */; };
 		653F24661B72FE1A00AB3A44 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F24621B72FE1A00AB3A44 /* SwiftyJSON.swift */; };
-		653F24671B72FE1A00AB3A44 /* AuthWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653F24631B72FE1A00AB3A44 /* AuthWebViewController.xib */; };
 		653F24681B72FE1A00AB3A44 /* DribbbleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F24641B72FE1A00AB3A44 /* DribbbleKit.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +34,6 @@
 		653F24571B72FDE200AB3A44 /* DribbbleKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleKitTests.swift; sourceTree = "<group>"; };
 		653F24611B72FE1A00AB3A44 /* AuthWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthWebViewController.swift; sourceTree = "<group>"; };
 		653F24621B72FE1A00AB3A44 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		653F24631B72FE1A00AB3A44 /* AuthWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthWebViewController.xib; sourceTree = "<group>"; };
 		653F24641B72FE1A00AB3A44 /* DribbbleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DribbbleKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +79,6 @@
 			children = (
 				653F24611B72FE1A00AB3A44 /* AuthWebViewController.swift */,
 				653F24621B72FE1A00AB3A44 /* SwiftyJSON.swift */,
-				653F24631B72FE1A00AB3A44 /* AuthWebViewController.xib */,
 				653F24641B72FE1A00AB3A44 /* DribbbleKit.swift */,
 				653F244A1B72FDE200AB3A44 /* DribbbleKit.h */,
 				653F24481B72FDE200AB3A44 /* Supporting Files */,
@@ -204,7 +201,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				653F24671B72FE1A00AB3A44 /* AuthWebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

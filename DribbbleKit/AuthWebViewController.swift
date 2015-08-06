@@ -10,7 +10,7 @@ import UIKit
 
 class AuthWebViewController: UIViewController {
 
-    @IBOutlet var webView: UIWebView!
+    var webView: UIWebView!
     
     var authUrl: NSURL?
     
@@ -18,11 +18,17 @@ class AuthWebViewController: UIViewController {
         super.viewDidLoad()
 
         self.configureNavItem()
+        self.createWebView()
         
         if let url = self.authUrl {
             let request = NSURLRequest(URL: url, cachePolicy: .ReturnCacheDataElseLoad, timeoutInterval: 15)
             self.webView.loadRequest(request)
         }
+    }
+    
+    func createWebView() {
+        self.webView = UIWebView(frame: self.view.bounds)
+        self.view.addSubview(self.webView)
     }
     
     func configureNavItem() {
