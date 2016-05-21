@@ -1,6 +1,0 @@
-framework module Pods_DribbbleKit {
-  umbrella header "Pods-DribbbleKit-umbrella.h"
-
-  export *
-  module * { export * }
-}
